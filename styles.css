@@ -98,6 +98,7 @@ h1, h2, h3, h4, h5, h6 {
   "gridName gridName"
   "gridType gridRegion"
   "gridDex gridDex";
+  grid-template-rows: 2rem 2rem auto;
   width: 15rem;
   height: 20rem;
   padding: 2rem;
