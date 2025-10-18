@@ -36,3 +36,10 @@
 11	Prakraisburg
 12	Kitakami
 */
+
+Data to include:
+
+Name
+National #
+Type
+PokeDex Entry
