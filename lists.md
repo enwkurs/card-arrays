@@ -94,7 +94,7 @@ const pokeFacts = [
   TOP RIGHT BOTTOM LEFT
 
 
-
+template
 
       {name: "NAME", 
     type: [pokeType[], pokeType[]],  
