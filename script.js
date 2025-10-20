@@ -45,109 +45,301 @@
 
 
 const pokeType = [ "assets/types/normal.png", "assets/types/fire.png", "assets/types/water.png", "assets/types/electric.png", "assets/types/grass.png", "assets/types/ice.png", "assets/types/fighting.png", "assets/types/poison.png", "assets/types/ground.png", "assets/types/flying.png", "assets/types/psychic.png", "assets/types/bug.png", "assets/types/rock.png", "assets/types/ghost.png", "assets/types/dragon.png", "assets/types/dark.png", "assets/types/steel.png", "assets/types/fairy.png" ];
-console.log(pokeType);
-
-
-/*
-0	Kanto
-1	Johto
-2	Hoenn
-3	Sevii Islands
-4	Sinnoh
-5	Unova
-6	Kalos
-7	Alola
-8	Galar
-9	Hisui
-10	Paldea
-11	Prakraisburg
-12	Kitakami
-*/
-
-const pokeRegion = [ "Kanto", "Johto", "Hoenn", "Sevii Islands", "Sinnoh", "Unova", "Kalos", "Alola", "Galar", "Hisui", "Paldea", "Prakraisburg", "Kitakami"];
-console.log(pokeRegion);
-
 
 
 const pokeFacts = [
-    {name: "Eevee", type: `${pokeType[0]} ${pokeType[2]}`, region: `${pokeRegion[0]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "Flareon", type: `${pokeType[1]}`, region: `${pokeRegion[1]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "Vaporeon", type: `${pokeType[2]}`, region: `${pokeRegion[2]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "Jolteon", type: `${pokeType[3]}`, region: `${pokeRegion[3]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "Umbreon", type: `${pokeType[4]}`, region: `${pokeRegion[4]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "Espeon", type: `${pokeType[5]}`, region: `${pokeRegion[5]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "Leafeon", type: `${pokeType[6]}`, region: `${pokeRegion[6]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "Glaceon", type: `${pokeType[7]}`, region: `${pokeRegion[7]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "Sylveon", type: `${pokeType[8]}`, region: `${pokeRegion[8]}`, imgSrc: "/assets/sprites/700.png", entry: `Its ribbonlike feelers give off an aura that weakens hostility in its prey, causing them to let down their guard. Then it attacks.`},
-    {name: "NAME", type: `${pokeType[9]}`, region: `${pokeRegion[9]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "NAME", type: `${pokeType[10]}`, region: `${pokeRegion[10]}`, imgSrc: "/assets/sprites/700.png"},
-    {name: "test poke", type: [`${pokeType[11]}`, `${pokeType[10]}`], region: `${pokeRegion[11]}`, imgSrc: "/assets/sprites/700.png"},
+    {name: "Zubat", 
+    type: [pokeType[7], pokeType[9]],  
+    imgSrc: "/assets/sprites/zubat1.png",
+    dex: "Makes its home in gloomy caves. Atrophied eyes have left this Pokémon blind, so it scans its surroundings via sound waves that it emits from its mouth as it flies."},
+
+    {name: "Golbat", 
+    type: [pokeType[7], pokeType[9]], 
+    imgSrc: "/assets/sprites/golbat1.png",
+    dex: "Golbat bites down on prey with its four fangs and drinks the victim's blood. It becomes active on inky dark moonless nights, flying around to attack people and Pokémon."},
+
+    {name: "Gastly", 
+    type: [pokeType[13], pokeType[7]],  
+    imgSrc: "/assets/sprites/gastly1.png",
+    dex: "It's said that gas emanating from a graveyard was possessed by the grievances of the deceased and thus became a Pokémon."},
+
+    {name: "Haunter", 
+    type: [pokeType[13], pokeType[7]],  
+    imgSrc: "/assets/sprites/haunter1.png",
+    dex: "It strikes at humans from total darkness. Those licked by its cold tongue grow weaker with each passing day until they die."},
+
+    {name: "Gengar", 
+    type: [pokeType[13], pokeType[7]],  
+    imgSrc: "/assets/sprites/gengar1.png",
+    dex: "Possesses potential victims' shadows in an effort to steal away the victims' lives. If your shadow begins to laugh, you must take hold of a protective charm posthaste!"},
+
+    {name: "Cubone", 
+    type: [pokeType[8]],  
+    imgSrc: "/assets/sprites/cubone.png",
+    dex: "When the memory of its departed mother brings it to tears, its cries echo mournfully within the skull it wears on its head."},
+
+    {name: "Galarian Articuno", 
+    type: [pokeType[10], pokeType[9]],  
+    imgSrc: "/assets/sprites/articuno.png",
+    dex: "Its feather-like blades are composed of psychic energy and can shear through thick iron sheets as if they were paper."},
+
+    {name: "Umbreon", 
+    type: [pokeType[15]],  
+    imgSrc: "/assets/sprites/umbreon1.png",
+    dex: "It lurks in the dark of night looking for prey. At the moment it pounces, the rings on its body glow dimly but ominously."},
+
+    {name: "Murkrow", 
+    type: [pokeType[15], pokeType[9]],  
+    imgSrc: "/assets/sprites/murkrow1.png",
+    dex: "Feared and loathed by many, it is believed to bring misfortune to all those who see it at night."},
+
+    {name: "Misdreavus", 
+    type: [pokeType[13]],  
+    imgSrc: "/assets/sprites/misdreavus.png",
+    dex: "Misdreavus frightens people with a creepy, sobbing cry. The Pokémon apparently uses its red spheres to absorb the fearful feelings of foes and turn them into nutrition."},
+
+    {name: "Galarian Corsola", 
+    type: [pokeType[13]],  
+    imgSrc: "/assets/sprites/corsola.png",
+    dex: "Sudden climate change wiped out this ancient kind of Corsola. This Pokémon absorbs others' life-force through its branches."},
+
+    {name: "Houndour", 
+    type: [pokeType[15], pokeType[1]],  
+    imgSrc: "/assets/sprites/houndour1.png",
+    dex: "Houndour hunt as a coordinated pack. They communicate with each other using a variety of cries to corner their prey. This Pokémon's remarkable teamwork is unparalleled."},
+
+    {name: "Houndoom", 
+    type: [pokeType[15], pokeType[1]],  
+    imgSrc: "/assets/sprites/houndoom1.png",
+    dex: "Identifiable by its eerie howls, people a long time ago thought it was the grim reaper and feared it."},
+
+    {name: "Sableye", 
+    type: [pokeType[15], pokeType[13]],  
+    imgSrc: "/assets/sprites/sableye.png",
+    dex: "This Pokémon is feared. When its gemstone eyes begin to glow with a sinister shine, it's believed that Sableye will steal people's spirits away."},
+
+    {name: "Shuppet", 
+    type: [pokeType[13]],  
+    imgSrc: "/assets/sprites/shuppet1.png",
+    dex: "Shuppet is attracted by feelings of jealousy and vindictiveness. If someone develops strong feelings of vengeance, this Pokémon will appear in a swarm and line up beneath the eaves of that person's home."},
+
+    {name: "Banette", 
+    type: [pokeType[13]],  
+    imgSrc: "/assets/sprites/banette.png",
+    dex: "It's a stuffed toy that was thrown away and became possessed, ever searching for the one who threw it away so it can exact its revenge."},
+
+    {name: "Duskull", 
+    type: [pokeType[13]],  
+    imgSrc: "/assets/sprites/duskull1.png",
+    dex: "Duskull wanders lost among the deep darkness of midnight. There is an oft-told admonishment given to misbehaving children that this Pokémon will spirit away bad children who earn scoldings from their mothers."},
+
+    {name: "Dusclops", 
+    type: [pokeType[13]],  
+    imgSrc: "/assets/sprites/dusclops1.png",
+    dex: "Dusclops's body is completely hollow—there is nothing at all inside. It is said that its body is like a black hole. This Pokémon will absorb anything into its body, but nothing will ever come back out."},
+
+    {name: "Mismagius", 
+    type: [pokeType[13]],  
+    imgSrc: "/assets/sprites/mismagus1.png",
+    dex: "It appears as if from nowhere—muttering incantations, placing curses, and giving people terrifying visions."},
+
+    {name: "Gothorita", 
+    type: [pokeType[10]],  
+    imgSrc: "/assets/sprites/gothorita.png",
+    dex: "It's said that when stars shine in the night sky, this Pokémon will spirit away sleeping children. Some call it the Witch of Punishment."},
+
+    {name: "Litwick", 
+    type: [pokeType[13], pokeType[1]],  
+    imgSrc: "/assets/sprites/litwick.png",
+    dex: "Litwick shines a light that absorbs the life energy of people and Pokémon, which becomes the fuel that it burns."},
+
+    {name: "Lampent", 
+    type: [pokeType[13], pokeType[1]],  
+    imgSrc: "/assets/sprites/lampent.png",
+    dex: "It lurks in cities, pretending to be a lamp. Once it finds someone whose death is near, it will trail quietly after them."},
+
+    {name: "Chandelure", 
+    type: [pokeType[13], pokeType[1]],  
+    imgSrc: "/assets/sprites/chandelure.png",
+    dex: "It absorbs spirits, which it then burns. By waving the flames on its arms, it puts its foes into a hypnotic trance."},
+
+    {name: "Phantump", 
+    type: [pokeType[13], pokeType[4]],  
+    imgSrc: "/assets/sprites/phantump1.png",
+    dex: "According to old tales, these Pokémon are stumps possessed by the spirits of children who died while lost in the forest."},
+
+    {name: "Pumpkaboo", 
+    type: [pokeType[13], pokeType[4]],  
+    imgSrc: "/assets/sprites/pumpkaboosmall.png",
+    dex: "The light that streams out from the holes in the pumpkin can hypnotize and control the people and Pokémon that see it."},
+
+    {name: "Gourgeist", 
+    type: [pokeType[13], pokeType[4]],  
+    imgSrc: "/assets/sprites/gourgeistsmall.png",
+    dex: "In the darkness of a new-moon night, Gourgeist will come knocking. Whoever answers the door will be swept off to the afterlife."},
+
+    {name: "Sinistea", 
+    type: [pokeType[13]],  
+    imgSrc: "/assets/sprites/sinistea.png",
+    dex: "The soul of someone who died alone possessed some leftover tea. This Pokémon appears in hotels and houses."},
+
+    {name: "Polteageist", 
+    type: [pokeType[13]],  
+    imgSrc: "/assets/sprites/polteageist.png",
+    dex: "Though risky to drink, this Pokémon's tea tastes delicious. Gourmets who have no fear of danger drink Polteageist tea day after day."},
+
+    {name: "Impidimp", 
+    type: [pokeType[13], pokeType[17]], 
+    imgSrc: "/assets/sprites/impadimp.png",
+    dex: "It sneaks into people's homes, stealing things and feasting on the negative energy of the frustrated occupants."}
 ];
-console.log(pokeFacts);
-console.log(`Check Type 18 source ${pokeType[18]}`);
 
-// Set up a class or variable in CSS for color according to type???
-// for loop for type when type has more than one?
-
+// Set up the card grid to populate for each item in the pokeFacts array
 
 const gridContainer = document.querySelector("#gridContainer");
 
-for ( let pokeDex = 0; pokeDex < pokeFacts.length; pokeDex++) {
-  console.log("pokeDex");
+// Let the variable pokeIndex start at the value 0; then if pokeIndex value is less than the length of pokeFacts; increase the value of pokeIndex by 1
+// 
+for ( let pokeIndex = 0; pokeIndex < pokeFacts.length; pokeIndex++) {
+  const pokeMon = pokeFacts[pokeIndex];
+  console.log(`---- Checking PokeCardsInfo Loop ----`);
+  console.log(pokeMon.name);
+
+
+
+// Start building HTML elements
+
+// Create card div
+const listItem = document.createElement("div");
+listItem.classList.add("grid", "pokeCard");
+
+// Get sprite
+const pokeSprite = document.createElement("img");
+pokeSprite.src = pokeFacts[pokeIndex].imgSrc;
+pokeSprite.classList.add("gridImg");
+
+// Get name
+const pokeName = document.createElement("h2");
+pokeName.textContent = pokeFacts[pokeIndex].name;
+pokeName.classList.add("gridName");
+
+// Create the div to hold the type images
+const typesDiv = document.createElement("div");
+typesDiv.classList.add("gridType", "typesDiv");
+
+    // Get type - Type needs its own loop
+    const pokeType = pokeMon.type;
+    for ( let typeArray = 0; typeArray < pokeType.length; typeArray++ ) {
+      console.log(pokeType[typeArray]);
+
+      // Create img element for types
+      const pokeTypeImg = document.createElement("img");
+      pokeTypeImg.src = pokeType[typeArray];
+
+      // Append types img element
+      typesDiv.appendChild(pokeTypeImg);
+    }
+
+// Get pokeDex entry
+const pokeDex = document.createElement("p");
+pokeDex.textContent = pokeFacts[pokeIndex].dex;
+pokeDex.classList.add("gridDex");
+
+
+
+
+
+
+// Append elements
+gridContainer.appendChild(listItem);
+listItem.appendChild(pokeSprite);
+listItem.appendChild(pokeName);
+listItem.appendChild(typesDiv);
+listItem.appendChild(pokeDex);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // ------------------------------- TEST -----------------------------------------------
-  const multiType = pokeFacts[pokeDex].type;
-  console.log(`Checking for multi ${multiType}`);
+  // const multiType = pokeFacts[pokeCards].type;
+  // console.log(`Checking for multi ${multiType}`);
 
-  for ( let typesLoop = 0; typesLoop < multiType.length; typesLoop++ ) {
+  // for ( let typesLoop = 0; typesLoop < multiType.length; typesLoop++ ) {
+  //         // Create pokeType img
+  //         const pokeType = document.createElement("img");
+  //         pokeType.src = pokeFacts[pokeCards].type;
 
-  }
-
+  // }
   // ------------------------------ TEST ------------------------------------
 
-
-      // Create pokeType img
-      const pokeType = document.createElement("img");
-      pokeType.src = multiType;
-
-
-
-
-
-
   // Create card div
-  const listItem = document.createElement("div");
-  listItem.className = "pokeCard";
+  // const listItem = document.createElement("div");
+  // listItem.className = "pokeCard";
 
   // Create sprite img
-  const pokeSprite = document.createElement("img");
-  pokeSprite.src = pokeFacts[pokeDex].imgSrc;
+  // const pokeSprite = document.createElement("img");
+  // pokeSprite.src = pokeFacts[pokeCards].imgSrc;
 
   // Create name h2
-  const pokeName = document.createElement("h2");
-  pokeName.textContent = `Name: ${pokeFacts[pokeDex].name}`;
+  // const pokeName = document.createElement("h2");
+  // pokeName.textContent = `Name: ${pokeFacts[pokeCards].name}`;
 
   // // Create pokeType img
   // const pokeType = document.createElement("img");
-  // pokeType.src = pokeFacts[pokeDex].type;
+  // pokeType.src = pokeFacts[pokeCards].type;
 
   // // Create region p
   // const pokeRegion = document.createElement("p"); // consider something other than p for this info
-  // pokeRegion.textContent = `Region: ${pokeFacts[pokeDex].region}`;
+  // pokeRegion.textContent = `Region: ${pokeFacts[pokeCards].region}`;
 
   // Create entry p
-  const pokeEntry = document.createElement("p");
-  pokeEntry.textContent = `${pokeFacts[pokeDex].entry}`;
-  console.log(pokeEntry);
+  // const pokeEntry = document.createElement("p");
+  // pokeEntry.textContent = `${pokeFacts[pokeCards].entry}`;
+  // console.log(pokeEntry);
 
 
-  gridContainer.appendChild(listItem);
-  listItem.appendChild(pokeSprite);
-  listItem.appendChild(pokeName);
-  listItem.appendChild(pokeType);
+
+
+  // gridContainer.appendChild(listItem);
+  // listItem.appendChild(pokeSprite);
+  // listItem.appendChild(pokeName);
+  // listItem.appendChild(pokeType);
   // listItem.appendChild(pokeRegion);
-  listItem.appendChild(pokeEntry);
-}
+  // listItem.appendChild(pokeEntry);
+
 
 
 // CARD GENERATION TEST

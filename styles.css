@@ -1,6 +1,6 @@
 /* ------------------ GLOBAL VARIABLES ------------------ */
 :root { 
-  --bars-color: #6ec2a9;
+  --bars-color: #23202b;
   --bars-pad: 1em 2em;
 
   --section-pad: 2rem 2rem; /* Is this really necessary? I guess it makes it easier to find and adjust? */
@@ -8,16 +8,45 @@
 
 /* ------------------ IMPORTS --------------------------- */
 
-/* @font-face {
-  font-family: Audiowave;
-  src: url(/assets/fonts/Audiowide-Regular.ttf)
+@font-face {
+  font-family: Bahiana;
+  src: url(/assets/fonts/Bahiana-Regular.ttf);
 }
 
 @font-face {
-  font-family: Afacad;
-  src: url(/assets/fonts/Afacad-VariableFont_wght.ttf);
-  src: url(/assets/fonts/Afacad-VariableFont_wght.ttf)
-} */
+  font-family: LoveYa;
+  src: url(/assets/fonts/LoveYaLikeASister-Regular.ttf);
+}
+
+@font-face {
+  font-family: NewRock;
+  src: url(/assets/fonts/NewRocker-Regular.ttf);
+}
+
+@font-face {
+  font-family: Protest;
+  src: url(/assets/fonts/ProtestRevolution-Regular.ttf);
+}
+
+@font-face {
+  font-family: RoadRage;
+  src: url(/assets/fonts/RoadRage-Regular.ttf);
+}
+
+@font-face {
+  font-family: Underdog;
+  src: url(/assets/fonts/Underdog-Regular.ttf);
+}
+
+@font-face {
+  font-family: WixMade;
+  src: url(/assets/fonts/WixMadeforText-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: RoadRage;
+  src: url(/assets/fonts/RoadRage-Regular.ttf);
+}
 
 /* ------------------ GLOBAL STYLING -------------------- */
 
@@ -29,7 +58,10 @@
 /* ----- Begone useless spaces I did not ask for ----- */
 
 body {
+  font-family: "WixMade";
 
+  background-color: #241d2e;
+background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%239C92AC' fill-opacity='0.14' fill-rule='evenodd'/%3E%3C/svg%3E");
 }
 
 .flex {
@@ -51,7 +83,30 @@ section {
 }
 
 p {
+  color: #f7f3fb;
+}
 
+h1 {
+  font-family: "NewRock";
+  font-size: 5rem;
+  color: #1C1A23;
+
+  -webkit-text-stroke: .05px #675676;
+  text-shadow:
+  0px 1px 0px #F79F3B,
+  0px 2px 0px #F69628,
+  0px 3px 0px #D77709,
+  0px 4px 0px #B06107,
+  0px 5px 0px #9D5707,
+  0px 7px 4px #000000,
+  0px 6px 8px #9937EB;
+}
+
+h2 {
+  font-family: "Underdog";
+  color: #f7f3fb;
+  font-size: 1.8rem;
+  text-shadow: 0px 2px 4px #9937EB;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -63,7 +118,12 @@ h1, h2, h3, h4, h5, h6 {
   justify-content: space-between;
   padding: var(--bars-pad);
 
+  height: auto;
+
   background-color: var(--bars-color);
+  background-image: url("/assets/spookybg.png");
+
+  box-shadow: 0 5px 15px 5px #000000;
 }
 
 .headerNav {
@@ -93,51 +153,69 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: auto auto auto; /* Change this to one column for mobile */
   gap: 2rem;
 }
+
 .pokeCard {
   grid-template-areas:
+  "gridImg gridImg"
   "gridName gridName"
-  "gridType gridRegion"
+  "gridType gridType"
   "gridDex gridDex";
-  grid-template-rows: 2rem 2rem auto;
-  width: 15rem;
-  height: 20rem;
-  padding: 2rem;
+  grid-template-rows: 8rem 3rem 2.5rem auto;
+  width: 19rem;
+  height: 24rem;
+  /* padding: 2rem; */
+  justify-items: center;
+  align-items: center;
 
   border-radius: 2rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #675676;
+  border-bottom-width: 0;
 
-  background-color: blueviolet;
+  background-color: #1C1A23;
+  box-shadow:
+  0px 1px 0px #F79F3B,
+  0px 2px 0px #F69628,
+  0px 3px 0px #D77709,
+  0px 4px 0px #B06107,
+  0px 5px 0px #9D5707,
+  0px 10px 15px #000000,
+  0px 17px 20px rgb(154, 56, 235, .25);
 }
 
+/* Grid Sections */
+.gridImg {
+  grid-area: gridImg;
+  padding: 2rem 2rem 0 2rem;
+}
 
-/* Is Grid the most efficient way to divide up the information on cards, or would flex be better? */
-/* If using Flex, items like TYPE and REGION that belong on the same row should be wrapped in a div, which means a new div needs to be made in the Javascript */
 .gridName {
   grid-area: gridName;
-  height: 2rem;
+  padding: 0 2rem 0 2rem;
 }
 
 .gridType {
   grid-area: gridType;
 }
+.typesDiv {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  width: 100%;
 
-.gridRegion {
-  grid-area: gridRegion;
+  background-color: #373346;
+}
+.typesDiv img {
+  /* width: 40%; */
+  height: 25px;
 }
 
 .gridDex {
   grid-area: gridDex;
+  padding: 0 2rem 0 2rem;
 }
-
-/* 
-<h2 class="gridName">Name</h2>
-          <h3 class="gridType">Type</h3>
-          <h3 class="gridRegion">Region</h4>
-          <p class="gridDex">
-          */
-
-
-
-
 
 /* ------------------ FOOTER --------------------------- */
 
@@ -153,5 +231,32 @@ h1, h2, h3, h4, h5, h6 {
 
   .navList {
     display: none;
+  }
+}
+
+
+/* ------------------ MEDIA QUERIES --------------------------- */
+
+/* Mobile - 1 Column */
+@media (max-width: 500px ) {
+  body {
+    background-color: red;
+    
+  }
+  .gridContainer {
+    grid-template-columns: auto;
+    gap: 2rem;
+  }
+}
+
+/* Tablet - 2 Columns */
+@media (min-width: 501px ) and (max-width: 1023px) {
+  body {
+    background-color: green;
+    
+  }
+  .gridContainer {
+    grid-template-columns: auto auto;
+    gap: 2rem;
   }
 }

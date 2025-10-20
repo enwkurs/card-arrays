@@ -43,3 +43,60 @@ Name
 National #
 Type
 PokeDex Entry
+
+
+
+
+
+const pokeFacts = [
+    {name: "Eevee", 
+    type: [pokeType[11], pokeType[10]],  
+    region: `${pokeRegion[0]}`, 
+    imgSrc: "/assets/sprites/700.png"},
+
+    {name: "Sylveon", 
+    type: [pokeType[11], pokeType[10]], 
+    region: `${pokeRegion[8]}`, 
+    imgSrc: "/assets/sprites/700.png", 
+    entry: `Its ribbonlike feelers give off an aura that weakens hostility in its prey, causing them to let down their guard. Then it attacks.`},
+
+    {name: "NAME", 
+    type: [pokeType[11], pokeType[10]],  
+    region: `${pokeRegion[9]}`, 
+    imgSrc: "/assets/sprites/700.png"},
+
+    {name: "NAME", 
+    type: [pokeType[11], pokeType[10]],  
+    region: `${pokeRegion[10]}`, 
+    imgSrc: "/assets/sprites/700.png"},
+
+    {name: "test poke", 
+    type: [pokeType[11], pokeType[10]], 
+    region: `${pokeRegion[11]}`, 
+    imgSrc: "/assets/sprites/700.png"},
+];
+
+
+
+
+
+  grid-template-areas:
+  "gridImg gridImg"
+  "gridName gridName"
+  "gridType gridType"
+  "gridDex gridDex";
+
+
+
+
+  /* Top: 0, Right: 20px, Bottom: 0, Left: 20px */
+
+  TOP RIGHT BOTTOM LEFT
+
+
+
+
+      {name: "NAME", 
+    type: [pokeType[], pokeType[]],  
+    imgSrc: "/",
+    dex: ""},
