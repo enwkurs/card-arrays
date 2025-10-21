@@ -160,7 +160,7 @@ h1, h2, h3, h4, h5, h6 {
   "gridName gridName"
   "gridType gridType"
   "gridDex gridDex";
-  grid-template-rows: 8rem 3rem 2.5rem auto;
+  grid-template-rows: 7rem 4rem 2.5rem auto;
   width: 19rem;
   height: 24rem;
   /* padding: 2rem; */
@@ -174,6 +174,11 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom-width: 0;
 
   background-color: #1C1A23;
+  /* background: #1C1A23;
+  background: -moz-radial-gradient(center, #1C1A23 0%, #2B2836 100%);
+  background: -webkit-radial-gradient(center, #1C1A23 0%, #2B2836 100%);
+  background: radial-gradient(ellipse at center, #1C1A23 0%, #2B2836 100%); */
+
   box-shadow:
   0px 1px 0px #F79F3B,
   0px 2px 0px #F69628,
@@ -187,12 +192,14 @@ h1, h2, h3, h4, h5, h6 {
 /* Grid Sections */
 .gridImg {
   grid-area: gridImg;
-  padding: 2rem 2rem 0 2rem;
+  align-self: end;
+  /* padding-bottom: .5rem; */
 }
 
 .gridName {
   grid-area: gridName;
-  padding: 0 2rem 0 2rem;
+  /* padding-bottom: .5rem; */
+  /* padding: 0 2rem 1rem 2rem; */
 }
 
 .gridType {
@@ -200,8 +207,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 .typesDiv {
   display: flex;
-  justify-content: space-around;
+  gap: 2rem;
   align-items: center;
+  justify-content: center;
   height: 100%;
   width: 100%;
 
@@ -210,11 +218,13 @@ h1, h2, h3, h4, h5, h6 {
 .typesDiv img {
   /* width: 40%; */
   height: 25px;
+  
 }
 
 .gridDex {
   grid-area: gridDex;
-  padding: 0 2rem 0 2rem;
+  padding: 1rem 2rem 0 2rem;
+  align-self: start;
 }
 
 /* ------------------ FOOTER --------------------------- */

@@ -110,7 +110,7 @@ const pokeFacts = [
 
     {name: "Houndoom", 
     type: [pokeType[15], pokeType[1]],  
-    imgSrc: "/assets/sprites/houndoom1.png",
+    imgSrc: "/assets/sprites/houndoom2.png",
     dex: "Identifiable by its eerie howls, people a long time ago thought it was the grim reaper and feared it."},
 
     {name: "Sableye", 
