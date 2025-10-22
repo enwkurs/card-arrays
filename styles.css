@@ -1,36 +1,14 @@
 /* ------------------ GLOBAL VARIABLES ------------------ */
 :root { 
   --bars-color: #23202b;
-  --bars-pad: 1em 2em;
-
+  --bars-pad: 2rem 2rem;
   --section-pad: 2rem 2rem; /* Is this really necessary? I guess it makes it easier to find and adjust? */
 }
 
 /* ------------------ IMPORTS --------------------------- */
-
-@font-face {
-  font-family: Bahiana;
-  src: url(/assets/fonts/Bahiana-Regular.ttf);
-}
-
-@font-face {
-  font-family: LoveYa;
-  src: url(/assets/fonts/LoveYaLikeASister-Regular.ttf);
-}
-
 @font-face {
   font-family: NewRock;
   src: url(/assets/fonts/NewRocker-Regular.ttf);
-}
-
-@font-face {
-  font-family: Protest;
-  src: url(/assets/fonts/ProtestRevolution-Regular.ttf);
-}
-
-@font-face {
-  font-family: RoadRage;
-  src: url(/assets/fonts/RoadRage-Regular.ttf);
 }
 
 @font-face {
@@ -41,11 +19,6 @@
 @font-face {
   font-family: WixMade;
   src: url(/assets/fonts/WixMadeforText-VariableFont_wght.ttf);
-}
-
-@font-face {
-  font-family: RoadRage;
-  src: url(/assets/fonts/RoadRage-Regular.ttf);
 }
 
 /* ------------------ GLOBAL STYLING -------------------- */
@@ -61,7 +34,44 @@ body {
   font-family: "WixMade";
 
   background-color: #241d2e;
-background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%239C92AC' fill-opacity='0.14' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='1' viewBox='0 0 40 1' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v1H0z' fill='%239C92AC' fill-opacity='0.14' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+a {
+  color: #e99638;
+  display: inline-block;
+  transition: transform .2s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
+  font-weight: bold;
+
+  text-shadow: 
+  2px 2px 3px rgba(153,55,235,0.6), 
+  2px -2px 3px rgba(153,55,235,0.6), 
+  -2px 2px 3px rgba(153,55,235,0.6), 
+  -2px -2px 3px rgba(153,55,235,0.6);
+
+  transform: scale(1.01);
+}
+
+a:visited {
+  color: #e99638;
+}
+
+a:hover {
+  color: white;
+  font-size: 1.03rem;
+}
+
+a:active {
+  text-shadow: 
+  2px 2px 3px #aa42ff, 
+  2px -2px 3px #aa42ff, 
+  -2px 2px 3px #aa42ff, 
+  -2px -2px 3px #aa42ff;
 }
 
 .flex {
@@ -109,15 +119,17 @@ h2 {
   text-shadow: 0px 2px 4px #9937EB;
 }
 
-h1, h2, h3, h4, h5, h6 {
-
+h3 {
+  font-family: "Underdog";
+  color: #f7f3fb;
+  font-size: 1.5rem;
+  text-shadow: 0px 2px 4px #9937EB;
 }
 
 /* ------------------ HEADER --------------------------- */
 .header {
   justify-content: space-between;
   padding: var(--bars-pad);
-
   height: auto;
 
   background-color: var(--bars-color);
@@ -126,31 +138,16 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 5px 15px 5px #000000;
 }
 
-.headerNav {
-
-}
-
-.navList {
-  gap: 8px;
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.hamburgerIcon {
-  display: none;
-}
-
 /* ------------------ MAIN --------------------------- */
 .main {
-
   flex-direction: column;
-
-  gap: 30px;
+  gap: 6rem;
+  padding: 4rem 0 4rem 0;
 }
 
 /* ------------------ CARDS --------------------------- */
 .gridContainer {
-  grid-template-columns: auto auto auto; /* Change this to one column for mobile */
+  grid-template-columns: auto auto auto;
   gap: 2rem;
 }
 
@@ -160,12 +157,16 @@ h1, h2, h3, h4, h5, h6 {
   "gridName gridName"
   "gridType gridType"
   "gridDex gridDex";
-  grid-template-rows: 7rem 4rem 2.5rem auto;
+  grid-template-rows: 6rem 4rem 2.5rem auto;
   width: 19rem;
-  height: 24rem;
-  /* padding: 2rem; */
+  height: 25rem;
   justify-items: center;
   align-items: center;
+
+  animation-name: slideDown;
+  animation-duration: .6s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
 
   border-radius: 2rem;
   border-style: solid;
@@ -173,33 +174,39 @@ h1, h2, h3, h4, h5, h6 {
   border-color: #675676;
   border-bottom-width: 0;
 
-  background-color: #1C1A23;
-  /* background: #1C1A23;
+  background: #1C1A23;
   background: -moz-radial-gradient(center, #1C1A23 0%, #2B2836 100%);
   background: -webkit-radial-gradient(center, #1C1A23 0%, #2B2836 100%);
-  background: radial-gradient(ellipse at center, #1C1A23 0%, #2B2836 100%); */
+  background: radial-gradient(ellipse at center, #1C1A23 0%, #2B2836 100%);
 
   box-shadow:
-  0px 1px 0px #F79F3B,
-  0px 2px 0px #F69628,
-  0px 3px 0px #D77709,
-  0px 4px 0px #B06107,
-  0px 5px 0px #9D5707,
+  0px 1px 0px #ec9838,
+  0px 2px 0px #df8824,
+  0px 3px 0px #c06a08,
+  0px 4px 0px #995406,
+  0px 5px 0px #834906,
   0px 10px 15px #000000,
   0px 17px 20px rgb(154, 56, 235, .25);
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 /* Grid Sections */
 .gridImg {
   grid-area: gridImg;
   align-self: end;
-  /* padding-bottom: .5rem; */
 }
 
 .gridName {
   grid-area: gridName;
-  /* padding-bottom: .5rem; */
-  /* padding: 0 2rem 1rem 2rem; */
 }
 
 .gridType {
@@ -215,10 +222,9 @@ h1, h2, h3, h4, h5, h6 {
 
   background-color: #373346;
 }
+
 .typesDiv img {
-  /* width: 40%; */
   height: 25px;
-  
 }
 
 .gridDex {
@@ -227,42 +233,117 @@ h1, h2, h3, h4, h5, h6 {
   align-self: start;
 }
 
-/* ------------------ FOOTER --------------------------- */
+.showMoreButton {
+  background: none;
+  border: none;
+  font-family: "NewRock";
+  font-size: 3rem;
+  color: #e6dcee;
 
+  -webkit-text-stroke: .05px #675676;
+  text-shadow:
+  0px 1px 0px #F79F3B,
+  0px 2px 0px #F69628,
+  0px 3px 0px #D77709,
+  0px 4px 0px #B06107,
+  0px 5px 0px #9D5707,
+  0px 7px 4px #000000,
+  0px 6px 8px #9937EB;
+}
+
+.showMoreButton:hover {
+  transform: scale(1.1);
+  text-shadow:
+  0px 1px 0px #F79F3B,
+  0px 2px 0px #F69628,
+  0px 3px 0px #D77709,
+  0px 4px 0px #B06107,
+  0px 5px 0px #9D5707,
+  0px 7px 4px #000000,
+  0px 6px 50px #9937EB;
+}
+
+.pokegif {
+  height: 100px;
+}
+
+/* ------------------ FOOTER --------------------------- */
 .footer {
   background-color: var(--bars-color);
   padding: var(--bars-pad);
-}
-/* MEDIA for tablets and under*/
-@media (max-width: 769px) {
-  .hamburgerIcon {
-    display: flex;
-  }
+  
+  flex-direction: column;
+  gap: .5rem;
 
-  .navList {
-    display: none;
-  }
+  color: #f7f3fb;
+
+  box-shadow: 0 -5px 15px 5px #000000;
 }
 
+.credits {
+  flex-direction: column;
+  list-style-type: none;
+}
+
+.credits li {
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.nintendo {
+  font-size: .8rem;
+}
 
 /* ------------------ MEDIA QUERIES --------------------------- */
 
 /* Mobile - 1 Column */
 @media (max-width: 500px ) {
   body {
-    background-color: red;
+    /* background-color: red; */
     
   }
+
+  .titleBox img {
+    display: none;
+  }
+
+  .titleText {
+    font-size: 3rem;
+  }
+
   .gridContainer {
     grid-template-columns: auto;
     gap: 2rem;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .credits li {
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+  }
+
+  .litwick {
+    display: none;
+  }
+
+  .haunter {
+    display: none;
   }
 }
 
 /* Tablet - 2 Columns */
 @media (min-width: 501px ) and (max-width: 1023px) {
   body {
-    background-color: green;
+    /* background-color: green; */
     
   }
   .gridContainer {

@@ -1,27 +1,3 @@
-// Hente et element = Hente
-// const hamburgerImg = document.querySelector("#hamburgerImg");
-
-// Alternativ 1:
-// Ha en funksjon = Modifiserer
-// Laget en funksjon som henter navList-elementet og bytter klassenavn for synlig/usynlig
-// function hamburgerToggle() {
-//   console.log("Hi from hamburgerToggle");
-
-  // const navListElement = document.querySelector(".navList"); // Bevist brukt klasse for kun et element med det klassenavnet
-  // console.log(navListElement);
-
-  // Metode 1: Skrive CSS i JS som blir inline-CSS
-//   navListElement.style.display = "flex";
-//   navListElement.style.flexDirection = "column";
-// }
-
-// Aktiverer en funksjon = Sender
-// hamburgerImg.addEventListener("click", hamburgerToggle);
-
-// 
-//
-//
-
 /*
 0 Normal
 1 Fire
@@ -198,34 +174,48 @@ const pokeFacts = [
 
 const gridContainer = document.querySelector("#gridContainer");
 
-// Let the variable pokeIndex start at the value 0; then if pokeIndex value is less than the length of pokeFacts; increase the value of pokeIndex by 1
-// 
-for ( let pokeIndex = 0; pokeIndex < pokeFacts.length; pokeIndex++) {
-  const pokeMon = pokeFacts[pokeIndex];
-  console.log(`---- Checking PokeCardsInfo Loop ----`);
-  console.log(pokeMon.name);
+// Get show more button
+const showMoreButton = document.querySelector("#showMoreButton");
 
+// Show more?
+let cardBatch = 6;
+let visibleBatch = 0;
 
+// Show more? Set up the function that controls how many show, the loop should be in this function
+function showMoreCards() {
 
-// Start building HTML elements
+  // Show more? - Break into "slices", initial controlled by cardBatch
+  // Instead of referencing the whole array, reference this which cuts out a slice of 6 from the array
+  const arrayBatch = pokeFacts.slice(visibleBatch, visibleBatch + cardBatch);
 
-// Create card div
-const listItem = document.createElement("div");
-listItem.classList.add("grid", "pokeCard");
+  // Let the variable pokeIndex start at the value 0; then if pokeIndex value is less than the length of pokeFacts; increase the value of pokeIndex by 1
+  for ( let pokeIndex = 0; pokeIndex < arrayBatch.length; pokeIndex++) {
+    const pokeMon = arrayBatch[pokeIndex];
+    console.log(`---- Checking PokeCardsInfo Loop ----`);
+    console.log(pokeMon.name);
 
-// Get sprite
-const pokeSprite = document.createElement("img");
-pokeSprite.src = pokeFacts[pokeIndex].imgSrc;
-pokeSprite.classList.add("gridImg");
+    // Start building HTML elements
 
-// Get name
-const pokeName = document.createElement("h2");
-pokeName.textContent = pokeFacts[pokeIndex].name;
-pokeName.classList.add("gridName");
+    // Create card div
+    const listItem = document.createElement("div");
+    listItem.classList.add("grid", "pokeCard");
 
-// Create the div to hold the type images
-const typesDiv = document.createElement("div");
-typesDiv.classList.add("gridType", "typesDiv");
+    listItem.style.opacity = "0";
+    listItem.style.animationDelay = (pokeIndex * .1) + "s";
+
+    // Get sprite
+    const pokeSprite = document.createElement("img");
+    pokeSprite.src = pokeMon.imgSrc;
+    pokeSprite.classList.add("gridImg");
+
+    // Get name
+    const pokeName = document.createElement("h2");
+    pokeName.textContent = pokeMon.name;
+    pokeName.classList.add("gridName");
+
+    // Create the div to hold the type images
+    const typesDiv = document.createElement("div");
+    typesDiv.classList.add("gridType", "typesDiv");
 
     // Get type - Type needs its own loop
     const pokeType = pokeMon.type;
@@ -240,146 +230,33 @@ typesDiv.classList.add("gridType", "typesDiv");
       typesDiv.appendChild(pokeTypeImg);
     }
 
-// Get pokeDex entry
-const pokeDex = document.createElement("p");
-pokeDex.textContent = pokeFacts[pokeIndex].dex;
-pokeDex.classList.add("gridDex");
+    // Get pokeDex entry
+    const pokeDex = document.createElement("p");
+    pokeDex.textContent = pokeMon.dex;
+    pokeDex.classList.add("gridDex");
 
 
+    // Append elements
+    gridContainer.appendChild(listItem);
+    listItem.appendChild(pokeSprite);
+    listItem.appendChild(pokeName);
+    listItem.appendChild(typesDiv);
+    listItem.appendChild(pokeDex);
 
+  }
 
+  // Keep track of how many cards have been shown
+  visibleBatch = visibleBatch + arrayBatch.length;
 
-
-// Append elements
-gridContainer.appendChild(listItem);
-listItem.appendChild(pokeSprite);
-listItem.appendChild(pokeName);
-listItem.appendChild(typesDiv);
-listItem.appendChild(pokeDex);
-
-
-
+  // Hide show more button when all cards are visible
+  if (visibleBatch >= pokeFacts.length) {
+    showMoreButton.style.display = "none";
+  };
 }
 
 
+showMoreButton.addEventListener("click", function() {
+  showMoreCards();
+});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // ------------------------------- TEST -----------------------------------------------
-  // const multiType = pokeFacts[pokeCards].type;
-  // console.log(`Checking for multi ${multiType}`);
-
-  // for ( let typesLoop = 0; typesLoop < multiType.length; typesLoop++ ) {
-  //         // Create pokeType img
-  //         const pokeType = document.createElement("img");
-  //         pokeType.src = pokeFacts[pokeCards].type;
-
-  // }
-  // ------------------------------ TEST ------------------------------------
-
-  // Create card div
-  // const listItem = document.createElement("div");
-  // listItem.className = "pokeCard";
-
-  // Create sprite img
-  // const pokeSprite = document.createElement("img");
-  // pokeSprite.src = pokeFacts[pokeCards].imgSrc;
-
-  // Create name h2
-  // const pokeName = document.createElement("h2");
-  // pokeName.textContent = `Name: ${pokeFacts[pokeCards].name}`;
-
-  // // Create pokeType img
-  // const pokeType = document.createElement("img");
-  // pokeType.src = pokeFacts[pokeCards].type;
-
-  // // Create region p
-  // const pokeRegion = document.createElement("p"); // consider something other than p for this info
-  // pokeRegion.textContent = `Region: ${pokeFacts[pokeCards].region}`;
-
-  // Create entry p
-  // const pokeEntry = document.createElement("p");
-  // pokeEntry.textContent = `${pokeFacts[pokeCards].entry}`;
-  // console.log(pokeEntry);
-
-
-
-
-  // gridContainer.appendChild(listItem);
-  // listItem.appendChild(pokeSprite);
-  // listItem.appendChild(pokeName);
-  // listItem.appendChild(pokeType);
-  // listItem.appendChild(pokeRegion);
-  // listItem.appendChild(pokeEntry);
-
-
-
-// CARD GENERATION TEST
-// const disneyCharacters = [
-//   { type: "mouse", name: "Mickey" },
-//   { type: "mouse", name: "Minnie" },
-//   { type: "dog", name: "Pluto" },
-//   { type: "duck", name: "Donald" },
-//   { type: "duck", name: "Daisy" },
-//   { type: "dog", name: "Goofy" },
-//   { type: "cat", name: "Figaro" },
-//   { type: "chipmunk", name: "Chip" },
-//   { type: "chipmunk", name: "Dale" },
-//   { type: "bird", name: "Clara Cluck" },
-// ];
-// console.log(disneyCharacters);
-// console.log(disneyCharacters[4].name);
-
-// Make the data show on the HTML document
-// const gridContainer = document.querySelector("#gridContainer"); // Point to the container that holds the cards "gridContainer"
-
-// Set up the loop that pulls info from the array
-// for ( let index = 0; index < disneyCharacters.length; index++) {
-  // Set up the function that creates the new elements
-// const listItem = document.createElement("div");
-// listItem.className = "pokeCard";
-
-// const pokeName = document.createElement("h2");
-// pokeName.textContent = `Name: ${disneyCharacters[index].name}`;
-
-// const pokeType = document.createElement("p");
-// pokeType.textContent = `Type: ${disneyCharacters[index].type}`;
-
-// gridContainer.appendChild(listItem);
-// listItem.appendChild(pokeName);
-// listItem.appendChild(pokeType);
-
-// };
-
-
-// Note: need to figure out how to apply the right styling to each card Key
-// For example: Name should be h2, type should be <p>
-// Ez4ME
+showMoreCards();

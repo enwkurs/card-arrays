@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Hjem</title>
-    <link href="code.png" rel="icon" type="image/png" />
+    <title>Spooky Pokémon</title>
+    <link href="assets/favicoboo.png" rel="icon" type="image/png" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <!-- External files -->
@@ -13,7 +13,10 @@
   <body>
     <!-- HEADER -->
     <header class="flex header">
-      <h1>Spooky Pokémon</h1>
+      <img class="pokegif" src="/assets/anim/0710Pumpkaboo.gif" alt="animated pumpkaboo">
+      <img class="pokegif litwick" src="/assets/anim/0607Litwick.gif" alt="animated Litwick">
+      <img class="pokegif" src="/assets/anim/0092Gastly.gif" alt="animated Gastly">
+      <img class="pokegif haunter" src="/assets/anim/0093Haunter.gif" alt="animated Haunter">
     </header>
 
     <!-- MAIN BODY -->
@@ -21,27 +24,27 @@
       <!-- SECTIONS -->
       <section id="main" class="flex center main">
 
-        
-        <h1><img src="/assets/anim/pumpkaboo-super.gif" alt=""> Spooky Pokémon <img src="/assets/anim/pumpkaboo-super (1).gif" alt=""></h1>
-        <img src="/assets/anim/0710 - Pumpkaboo.gif" alt="">
-        <h2>Styling for h2</h2>
-        <h3>Styling for h3</h3>
-        <h4>Styling for h4</h4>
-        <h5>Styling for h5</h5>
-        <h6>Styling for h6</h6>
-
-        <p>Styling for paragraphs</p>
+        <div class="titleBox">
+          <h1 class="titleText"><img src="/assets/anim/pumpkaboo-super.gif" alt="pumpkaboo"> Spooky Pokémon <img src="/assets/anim/pumpkaboo-super (1).gif" alt="pumpkaboo"></h1>
+        </div>
 
         <div id="gridContainer" class="grid gridContainer">
-
         </div>
-      </section>
 
+        <button id="showMoreButton" class="showMoreButton">Show More</button>
+      </section>
     </main>
 
     <!-- FOOTER -->
     <footer class="flex footer">
-      <h3>Placeholder</h3>
+      <h3>Credits</h3>
+
+      <ul class="flex credits">
+        <li><b>Header Background:</b> <a href="https://www.freepik.com/free-vector/collection-flat-halloween-pattern_5160988.htm#position=11" target="_blank">Designed by Freepik</a></li>
+        <li><b>Striped Background:</b> <a href="https://heropatterns.com/" target="_blank"> https://heropatterns.com/</a></li>
+        <li><b>Pokemon Sprites:</b> <a href="https://github.com/PokeAPI/sprites" target="_blank">PokéAPI Sprites</a></li>
+        <li class="nintendo">Pokémon © 2002-2025 Pokémon. © 1995-2025 Nintendo/Creatures Inc./GAME FREAK inc. TM, ® and Pokémon character names are trademarks of Nintendo.</li>
+      </ul>
     </footer>
   </body>
 </html>
