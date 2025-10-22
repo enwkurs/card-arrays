@@ -187,7 +187,7 @@ Ghost	Fairy
 It wears a rag fashioned into a Pikachu costume in an effort to look less scary. Unfortunately, the costume only makes it creepier.
 Its actual appearance is unknown. A scholar who saw what was under its rag was overwhelmed by terror and died from the shock.
 
-*****Marshadow 
+Marshadow 
 0802
 Fighting	Ghost
 It slips into the shadows of others and mimics their powers and movements. As it improves, it becomes stronger than those it's imitating.

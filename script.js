@@ -167,7 +167,12 @@ const pokeFacts = [
     {name: "Impidimp", 
     type: [pokeType[13], pokeType[17]], 
     imgSrc: "/assets/sprites/impadimp.png",
-    dex: "It sneaks into people's homes, stealing things and feasting on the negative energy of the frustrated occupants."}
+    dex: "It sneaks into people's homes, stealing things and feasting on the negative energy of the frustrated occupants."},
+
+    {name: "Marshadow", 
+    type: [pokeType[6], pokeType[13]],  
+    imgSrc: "/assets/sprites/Marshadow.png",
+    dex: "It slips into the shadows of others and mimics their powers and movements. As it improves, it becomes stronger than those it's imitating."}
 ];
 
 // Set up the card grid to populate for each item in the pokeFacts array
