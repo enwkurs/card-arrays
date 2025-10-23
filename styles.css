@@ -142,6 +142,10 @@ h3 {
   box-shadow: 0 5px 15px 5px #000000;
 }
 
+.pokegif {
+  height: 100px;
+}
+
 /* ------------------ MAIN --------------------------- */
 .main {
   flex-direction: column;
@@ -265,10 +269,6 @@ h3 {
   0px 5px 0px #9D5707,
   0px 7px 4px #000000,
   0px 6px 50px #9937EB;
-}
-
-.pokegif {
-  height: 100px;
 }
 
 /* ------------------ FOOTER --------------------------- */
