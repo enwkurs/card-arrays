@@ -188,7 +188,7 @@ let visibleBatch = 0;
 
 // Show more? Set up the function that controls how many show, the loop should be in this function
 function showMoreCards() {
-
+ 
   // Show more? - Break into "slices", initial controlled by cardBatch
   // Instead of referencing the whole array, reference this which cuts out a slice of 6 from the array
   const arrayBatch = pokeFacts.slice(visibleBatch, visibleBatch + cardBatch);
@@ -204,6 +204,15 @@ function showMoreCards() {
     // Create card div
     const listItem = document.createElement("div");
     listItem.classList.add("grid", "pokeCard");
+
+      // Error message - Checking if div has any children, if not, show error
+      const errorDiv = document.querySelector("#errorDiv");
+      console.log(errorDiv);
+      if (listItem.children.length === 0) {
+        errorDiv.classList.remove("hide");
+      } else {
+        errorDiv.classList.add("flex");
+      }
 
     listItem.style.opacity = "0";
     listItem.style.animationDelay = (pokeIndex * .1) + "s";
@@ -247,7 +256,6 @@ function showMoreCards() {
     listItem.appendChild(pokeName);
     listItem.appendChild(typesDiv);
     listItem.appendChild(pokeDex);
-
   }
 
   // Keep track of how many cards have been shown
@@ -257,6 +265,7 @@ function showMoreCards() {
   if (visibleBatch >= pokeFacts.length) {
     showMoreButton.style.display = "none";
   };
+
 }
 
 
@@ -265,3 +274,4 @@ showMoreButton.addEventListener("click", function() {
 });
 
 showMoreCards();
+

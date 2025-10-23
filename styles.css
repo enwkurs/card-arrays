@@ -87,6 +87,10 @@ a:active {
   display: grid;
 }
 
+.hide {
+  display: none;
+}
+
 section {
   min-height: 100vh;
   padding: var(--section-pad);
